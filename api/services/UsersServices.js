@@ -1,10 +1,10 @@
 const Services = require('./Services')
 const database = require('../models')
 
-class UserServices extends Services {
+class Usuarioservices extends Services {
   constructor(){
-    super('Users')//nome do modelo, recebendo por aq 
+    super('Usuarios')//nome do modelo, recebendo por aq 
   }
 }
 
-module.exports = UserServices
+module.exports = Usuarioservices

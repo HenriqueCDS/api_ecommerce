@@ -1,14 +1,14 @@
-const { UserServices } = require('../services')
+const { Usuarioservices } = require('../services')
 const Sequelize = require('sequelize')
 const Op = Sequelize.Op
 
-const UserServiço = new UserServices()
+const Usuarioserviço = new Usuarioservices()
 
 class UserController {
   static async pegaTodosOsUser(req, res){  
  
     try {
-      const TodosOsUser = await UserServiço.pegaTodosOsRegistros()
+      const TodosOsUser = await Usuarioserviço.pegaTodosOsRegistros()
       return res.status(200).json(TodosOsUser) 
     } catch (error) {
       return res.status(500).json(error.message)
@@ -18,7 +18,7 @@ class UserController {
   static async pegaUser(req, res) {  
     const { id } = req.params
     try {
-      const User = await UserServiço.pegaUmRegistro({ id })
+      const User = await Usuarioserviço.pegaUmRegistro({ id })
       return res.status(200).json(User)
     } catch (error) {
       return res.status(500).json(error.message)
@@ -28,7 +28,7 @@ class UserController {
   static async criaUser(req, res) {  
     var novoUserCriado = req.body
     try {
-      novoUserCriado = await UserServiço.criaRegistro(novoUserCriado)
+      novoUserCriado = await Usuarioserviço.criaRegistro(novoUserCriado)
       return res.status(200).json(novoUserCriado)
     } catch (error) {
       return res.status(500).json(error.message)
@@ -39,7 +39,7 @@ class UserController {
     const { id } = req.params
     const novasInfos = req.body
     try {
-      await UserServiço.atualizaRegistro(novasInfos, id)
+      await Usuarioserviço.atualizaRegistro(novasInfos, id)
       return res.status(200).json({ mensagem: `id ${id} atualizado` })
     } catch (error) {
       return res.status(500).json(error.message)
@@ -49,7 +49,7 @@ class UserController {
   static async apagaUser(req, res) {  
     const { id } = req.params
     try {
-      await UserServiço.apagaRegistro(id)
+      await Usuarioserviço.apagaRegistro(id)
       return res.status(200).json({ mensagem: `id ${id} deletado` })
 
     } catch (error) {
@@ -61,7 +61,7 @@ class UserController {
   static async restauraUser(req, res) {  
     const { id } = req.params
     try {
-      await UserServiço.restauraRegistro(id)
+      await Usuarioserviço.restauraRegistro(id)
       return res.status(200).json({ mensagem: `id ${id} restaurado` })
     } catch (error) {
       return res.status(500).json(error.message)
