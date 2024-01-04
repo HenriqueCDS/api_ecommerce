@@ -4,10 +4,10 @@ const userController = require('../controllers/UserController');
 const router = Router()
 
 router
-  .get('/user', userController.pegaTodosOsUser)  
-  .get('/user/:id', userController.pegaUser)  
-  .post('/user', userController.criaUser)  
-  .put('/user/:id', userController.atualizaUser)  
-  .delete('/user/:id', userController.apagaUser)  
+  .get('/users', userController.pegaTodosOsUser)  
+  .get('/users/:id', userController.pegaUser)  
+  .post('/users', userController.criaUser)  
+  .put('/users/:id', userController.atualizaUser)  
+  .delete('/users/:id', userController.apagaUser)  
  
 module.exports = router

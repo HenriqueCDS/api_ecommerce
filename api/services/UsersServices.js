@@ -3,7 +3,7 @@ const database = require('../models')
 
 class UserServices extends Services {
   constructor(){
-    super('User')//nome do modelo, recebendo por aq 
+    super('Users')//nome do modelo, recebendo por aq 
   }
 }
 

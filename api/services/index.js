@@ -1,9 +1,6 @@
-const AdminServices = require('./AdminServices')
-const RegisterServices = require('./RegisterService')
-const UserServices = require('./UserServices')
+
+const UserServices = require('./UsersServices')
 
 module.exports = {
-  AdminServices: AdminServices,
-  RegisterServices : RegisterServices,
   UserServices: UserServices
 }
