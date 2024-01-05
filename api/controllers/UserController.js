@@ -2,13 +2,13 @@ const { Usuarioservices } = require('../services')
 const Sequelize = require('sequelize')
 const Op = Sequelize.Op
 
-const Usuarioserviço = new Usuarioservices()
+const UserServiço = new UserServices()
 
 class UserController {
   static async pegaTodosOsUser(req, res){  
  
     try {
-      const TodosOsUser = await Usuarioserviço.pegaTodosOsRegistros()
+      const TodosOsUser = await UserServiço.pegaTodosOsRegistros()
       return res.status(200).json(TodosOsUser) 
     } catch (error) {
       return res.status(500).json(error.message)
