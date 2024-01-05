@@ -1,19 +1,6 @@
 'use strict';
-const {
-  Model
-} = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class Usuarios extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
-    static associate(models) {
-      // define association here
-    }
-  }
-  Usuarios.init({
+  const Usuarios = sequelize.define('Usuarios', {
     email:{
       type:DataTypes.STRING,
       validate:{
@@ -23,15 +10,19 @@ module.exports = (sequelize, DataTypes) => {
         }
       }
     },
-    fistName: DataTypes.STRING,
-    lastName: DataTypes.STRING,
+    PrimeiroNome: DataTypes.STRING,
+    SobreNome: DataTypes.STRING,
     password: DataTypes.STRING,
     ativo: DataTypes.BOOLEAN,
     isAdmin: DataTypes.BOOLEAN,
-    registerDate: DataTypes.STRING
-  }, {
-    sequelize,
-    modelName: 'Usuarios',
-  });
+    registerDate: DataTypes.STRING,
+    endereco_id:DataTypes.INTEGER
+  }, {});
+  Usuarios.associate = function(models) {
+    Usuarios.belongsTo(models.Enderecos, {
+      foreignKey: 'endereco_id',
+      onDelete: 'CASCADE',
+    })
+  };
   return Usuarios;
 };

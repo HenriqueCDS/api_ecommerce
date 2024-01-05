@@ -33,6 +33,9 @@ module.exports = {
       isAdmin: {
         type: Sequelize.BOOLEAN
       },
+      endereco_id:{
+        type: Sequelize.INTEGER
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
