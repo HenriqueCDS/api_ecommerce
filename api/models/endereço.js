@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
     numero: DataTypes.STRING,
     complemento: DataTypes.STRING,
     cidade: DataTypes.STRING,
-    estado: DataTypes.STRINGd
+    estado: DataTypes.STRING
   }, {});
   Endereço.associate = function(models) {
       // define association here

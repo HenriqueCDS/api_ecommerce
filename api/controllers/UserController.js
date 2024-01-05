@@ -2,7 +2,7 @@ const { Usuarioservices } = require('../services')
 const Sequelize = require('sequelize')
 const Op = Sequelize.Op
 
-const UserServiço = new UserServices()
+const UserServiço = new Usuarioservices()
 
 class UserController {
   static async pegaTodosOsUser(req, res){  
