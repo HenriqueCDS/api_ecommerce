@@ -18,7 +18,7 @@ class UserController {
   static async pegaUser(req, res) {  
     const { id } = req.params
     try {
-      const User = await Usuarioserviço.pegaUmRegistro({ id })
+      const User = await UserServiço.pegaUmRegistro({ id })
       return res.status(200).json(User)
     } catch (error) {
       return res.status(500).json(error.message)
@@ -26,10 +26,11 @@ class UserController {
   }
 
   static async criaUser(req, res) {  
-    var novoUserCriado = req.body
+    const novoUserCriado = req.body
     try {
-      novoUserCriado = await Usuarioserviço.criaRegistro(novoUserCriado)
-      return res.status(200).json(novoUserCriado)
+      const usuarioCriado = await UserServiço.criaRegistro(novoUserCriado)
+      console.log(usuarioCriado)
+      return res.status(200).json(usuarioCriado)
     } catch (error) {
       return res.status(500).json(error.message)
     }
@@ -39,7 +40,7 @@ class UserController {
     const { id } = req.params
     const novasInfos = req.body
     try {
-      await Usuarioserviço.atualizaRegistro(novasInfos, id)
+      await UserServiço.atualizaRegistro(novasInfos, id)
       return res.status(200).json({ mensagem: `id ${id} atualizado` })
     } catch (error) {
       return res.status(500).json(error.message)
@@ -49,7 +50,7 @@ class UserController {
   static async apagaUser(req, res) {  
     const { id } = req.params
     try {
-      await Usuarioserviço.apagaRegistro(id)
+      await UserServiço.apagaRegistro(id)
       return res.status(200).json({ mensagem: `id ${id} deletado` })
 
     } catch (error) {
@@ -61,7 +62,7 @@ class UserController {
   static async restauraUser(req, res) {  
     const { id } = req.params
     try {
-      await Usuarioserviço.restauraRegistro(id)
+      await UserServiço.restauraRegistro(id)
       return res.status(200).json({ mensagem: `id ${id} restaurado` })
     } catch (error) {
       return res.status(500).json(error.message)
