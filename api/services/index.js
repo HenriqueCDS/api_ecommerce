@@ -1,6 +1,7 @@
 
 const Usuarioservices = require('./UsuariosServices')
-
+const Enderecoservices = require('./EnderecoSevices')
 module.exports = {
-  Usuarioservices: Usuarioservices
+  Usuarioservices: Usuarioservices,
+  Enderecoservices:Enderecoservices
 }
