@@ -10,9 +10,9 @@ module.exports = (sequelize, DataTypes) => {
         }
       }
     },
-    PrimeiroNome: DataTypes.STRING,
-    SobreNome: DataTypes.STRING,
-    password: DataTypes.STRING,
+    primeiroNome: DataTypes.STRING,
+    sobreNome: DataTypes.STRING,
+    senha: DataTypes.STRING,
     ativo: DataTypes.BOOLEAN,
     isAdmin: DataTypes.BOOLEAN,
     registerDate: DataTypes.STRING,

@@ -12,13 +12,13 @@ module.exports = {
       email: {
         type: Sequelize.STRING
       },
-      fistName: {
+      primeiroNome: {
         type: Sequelize.STRING
       },
-      lastName: {
+      sobreNome: {
         type: Sequelize.STRING
       },
-      password: {
+      senha: {
         type: Sequelize.STRING
       },
       ativo: {
@@ -26,9 +26,6 @@ module.exports = {
       },
       registerDate: {
         type: Sequelize.STRING
-      },
-      ativo: {
-        type: Sequelize.BOOLEAN
       },
       isAdmin: {
         type: Sequelize.BOOLEAN

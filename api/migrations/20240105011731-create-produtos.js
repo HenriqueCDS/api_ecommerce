@@ -14,7 +14,7 @@ module.exports = {
       img: {
         type: Sequelize.STRING
       },
-      price: {
+      preco: {
         type: Sequelize.DOUBLE
       },
       createdAt: {

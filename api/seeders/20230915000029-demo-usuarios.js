@@ -7,9 +7,9 @@ module.exports = {
     return queryInterface.bulkInsert('Usuarios', [
       {
         email: 'AnaSouza@gmail.com',
-        fistName: 'Ana',
-        lastName: 'Souza ',
-        password:'lfmask;lfnakl;nf',
+        primeiroNome: 'Ana',
+        sobreNome: 'Souza ',
+        senha:'lfmask;lfnakl;nf',
         ativo: true,
         isAdmin: false,
         registerDate: '01/10/2003',
@@ -19,9 +19,9 @@ module.exports = {
       },
       {
         email: 'Roberto@gmail.com',
-        fistName: 'Roberto',
-        lastName: 'silvas',
-        password:'senha123',
+        primeiroNome: 'Roberto',
+        sobreNome: 'silvas',
+        senha:'senha123',
         ativo: true,
         isAdmin: false,
         registerDate: '17/09/2003',
@@ -31,9 +31,9 @@ module.exports = {
       },
       {
         email: 'Cesar@gmail.com',
-        fistName: 'Cesar',
-        lastName: 'Louros',
-        password:'4342424243423',
+        primeiroNome: 'Cesar',
+        sobreNome: 'Louros',
+        senha:'4342424243423',
         ativo: true,
         isAdmin: true,
         registerDate: '07/09/2010',
