@@ -3,7 +3,7 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
  
-      return queryInterface.bulkInsert('enderecos', [ {
+      return queryInterface.bulkInsert('Enderecos', [ {
         cep: '14521412-3',
         longradouro: 'Rua Ana Maria Braga',
         bairro: 'Souza leite',
@@ -30,7 +30,7 @@ module.exports = {
 
   down: (queryInterface, Sequelize) => {
 
-      return queryInterface.bulkDelete('enderecos', null, {});
+      return queryInterface.bulkDelete('Produtos', null, {});
   
   }
 };
