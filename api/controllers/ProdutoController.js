@@ -1,14 +1,17 @@
-const { Produtoservices } = require('../services')
+const { Produtoservices } = require('../services');
+const { imagensCarrosselservices } = require('../services');
 const Sequelize = require('sequelize')
 const Op = Sequelize.Op
 
 const ProdutoServico = new  Produtoservices();
+const imagensCarrosselServico = new  imagensCarrosselservices();
 
 class ProdutoController {
     static async pegaTodosOsProduto(req, res){  
    
       try {
         const TodosOsUser = await ProdutoServico.pegaTodosOsRegistros()
+    
         return res.status(200).json(TodosOsUser) 
       } catch (error) {
         return res.status(500).json(error.message)
