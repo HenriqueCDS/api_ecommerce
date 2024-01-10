@@ -13,6 +13,10 @@ class Services {
   async pegaUmRegistro(where = {}) {
     return database[this.nomeDoModelo].findOne({ where: { ...where } })
   }
+  async verificaEmail(where = {}){
+    return database[this.nomeDoModelo].findOne({ where: { ...where } })
+
+  }
 
   async criaRegistro(dados) {
     return database[this.nomeDoModelo].create(dados)

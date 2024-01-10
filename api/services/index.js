@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 
 const Usuarioservices = require('./UsuariosServices');
 const Enderecoservices = require('./EnderecoSevices');
@@ -8,4 +9,12 @@ module.exports = {
   Enderecoservices:Enderecoservices,
   Produtoservices:Produtoservices,
   imagensCarrosselservices:imagensCarrosselservices
+=======
+const Usuarioservices = require('./UsuariosServices')
+const LoginServices = require('./LoginServices')
+
+module.exports = {
+  Usuarioservices: Usuarioservices,
+  LoginServices: LoginServices
+>>>>>>> Stashed changes
 }
