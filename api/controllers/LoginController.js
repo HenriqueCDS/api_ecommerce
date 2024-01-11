@@ -7,7 +7,6 @@ const jwt = require('jsonwebtoken')
 const bcrypt  = require('bcrypt')
 
 const authMiddlewares = new AuthMiddleware()
-
 const LoginService = new LoginServices()
 
 
@@ -20,20 +19,29 @@ class LoginController{
             const usuario = await LoginService.verificaEmail({email})
             
             if(!usuario){
-                throw new Error("email ou senha inválidos")
+                return res.status(400).json({
+                    msg: "Email inválido. Por favor, certifique-se de que a senha inserida está correta e tente novamente. ",
+                    
+                })
             }
             const verificaSenha = await bcrypt.compare(senha, usuario.senha)
 
+         
             if(!verificaSenha){
-                throw new Error("email ou senha inválidos")
+                return res.status(400).json({
+                    msg: "Senha inválida. Por favor, certifique-se de que a senha inserida está correta e tente novamente. ",
+                    
+                })
             }
 
+          
             const token = jwt.sign({id:usuario.id }, process.env.JWT_PASS ?? '', {expiresIn: '8h'} ) // esse jwt deve ser mudado, ele é a senha que deixa o user logado
 
             const {senha:_ , ...usuarioLogin} = usuario // tirando a senha do json do usuario, para n retornar no json
             return res.status(200).json({
                 user: usuario,
-                token:token
+                token:token,
+               
             })
             
             
