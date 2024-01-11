@@ -1,9 +1,12 @@
 const { LoginServices } = require('../Services')
+const AuthMiddleware = require('../middlewares/AuthMiddleware')
 const Sequelize = require('sequelize')
 
 
 const jwt = require('jsonwebtoken')
 const bcrypt  = require('bcrypt')
+
+const authMiddlewares = new AuthMiddleware()
 
 const LoginService = new LoginServices()
 
