@@ -5,6 +5,7 @@ const router = Router()
 
 router
   .get('/produto', ProdutoController.pegaTodosOsProduto)  
+  .get('/produto/images', ProdutoController.pegaTodosProdutosEiamegens)  
   .get('/produto/:id', ProdutoController.pegaProduto)  
   .post('/produto', ProdutoController.criaProduto)  
   .put('/produto/:id', ProdutoController.atualizaProduto)  

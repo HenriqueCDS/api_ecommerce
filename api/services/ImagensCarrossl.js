@@ -3,7 +3,7 @@ const database = require('../models')
 
 class imagensCarrosselservices extends Services {
   constructor(){
-    super('imagensCarrossel')//nome do modelo, recebendo por aq 
+    super('imagens_carrossel')//nome do modelo, recebendo por aq 
   }
 }
 

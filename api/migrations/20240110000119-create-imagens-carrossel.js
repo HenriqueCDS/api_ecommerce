@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('imagens_carrossel', {
+    return queryInterface.createTable('imagens_carrossels', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -37,6 +37,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('imagensCarrossels');
+    return queryInterface.dropTable('imagens_carrossel');
   }
 };

@@ -11,13 +11,25 @@ class ProdutoController {
    
       try {
         const TodosOsUser = await ProdutoServico.pegaTodosOsRegistros()
-    
+        
+        return res.status(200).json(TodosOsUser) 
+      } catch (error) {
+        return res.status(500).json(error.message)
+      }
+    }
+
+    static async pegaTodosProdutosEiamegens(req, res){  
+   
+      try {
+        const TodosOsUser = await ProdutoServico.pegaTodosProdutosEiamegens()
+      
         return res.status(200).json(TodosOsUser) 
       } catch (error) {
         return res.status(500).json(error.message)
       }
     }
   
+    
     static async pegaProduto(req, res) {  
       const { id } = req.params
       try {

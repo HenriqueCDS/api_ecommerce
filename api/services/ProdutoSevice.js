@@ -5,6 +5,13 @@ class Produtoservices extends Services {
   constructor(){
     super('Produtos')//nome do modelo, recebendo por aq 
   }
+
+  async pegaTodosProdutosEiamegens(where = {}){
+    console.log(database);
+    return database.imagens_carrossels.findAll({where: {...where},include:[{ model:database.Produtos, require:true}]  })
+  }
+
 }
+
 
 module.exports = Produtoservices

@@ -3,7 +3,7 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
  
-      return queryInterface.bulkInsert('imagens_carrossel', [ {
+      return queryInterface.bulkInsert('imagens_carrossels', [ {
         idProduto: 1,
         img1: "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTGA72apxvDynFVgN6bL1a-jjV_Xo8EcW0xZIrgqU6DrzxSdAUTEnRI-blQW58ynM67mRPAzyHE9sbEZgcRlSWFMiFCqZuL&usqp=CAY",
         img2: "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRHN6Odl73rMQZTNVrbHIhryJd7skqTfLEkbWteojNWxWBifydSiJl8Bw5GC1ePtkjZ4OSgkJB9vPxMYPQlX34CfCXCyUmKtdYAEXq6ccU&usqp=CAE",

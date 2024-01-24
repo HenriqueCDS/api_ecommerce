@@ -1,6 +1,6 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const imagensCarrossel = sequelize.define('imagens_carrossel', {
+  const imagensCarrossel = sequelize.define('imagens_carrossels', {
     idProduto: DataTypes.INTEGER,
     img1: DataTypes.STRING,
     img2: DataTypes.STRING,
