@@ -6,9 +6,8 @@ class Produtoservices extends Services {
     super('Produtos')//nome do modelo, recebendo por aq 
   }
 
-  async pegaTodosProdutosEiamegens(where = {}){
-    console.log(database);
-    return database.imagens_carrossels.findAll({where: {...where},include:[{ model:database.Produtos, require:true}]  })
+  async pegaProdutosEimegem(where = {}){
+    return database.imagens_carrossels.findAll({where: { ...where },include:[{ model:database.Produtos, require:true}]  })
   }
 
 }

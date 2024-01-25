@@ -19,9 +19,10 @@ class ProdutoController {
     }
 
     static async pegaTodosProdutosEiamegens(req, res){  
-   
+      
       try {
-        const TodosOsUser = await ProdutoServico.pegaTodosProdutosEiamegens()
+        const { id } = req.params
+        const TodosOsUser = await ProdutoServico.pegaProdutosEimegem({ id })
       
         return res.status(200).json(TodosOsUser) 
       } catch (error) {
