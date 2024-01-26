@@ -2,6 +2,7 @@ const { Usuarioservices } = require('../Services')
 const Sequelize = require('sequelize')
 const Op = Sequelize.Op
 const bcrypt  = require('bcrypt')
+const e = require('express')
 
 const UserServiço = new Usuarioservices()
 
@@ -28,11 +29,17 @@ class UserController {
 
   static async criaUser(req, res) {  
     const novoUserCriado = req.body
+    const {email} = req.body
+    
     try {
-      const hashPassword = await bcrypt.hash(novoUserCriado.senha, 10)
-      novoUserCriado.senha = hashPassword
-      const usuarioCriado = await UserServiço.criaRegistro(novoUserCriado)
-      return res.status(200).json(usuarioCriado)
+      const emailExistente = await UserServiço.verificaEmail({email})
+      if(!emailExistente){
+        const hashPassword = await bcrypt.hash(novoUserCriado.senha, 10)
+        novoUserCriado.senha = hashPassword
+        const usuarioCriado = await UserServiço.criaRegistro(novoUserCriado)
+        return res.status(200).json(usuarioCriado)
+      }
+      return res.status(401).json({message: "Esse email já existe!"})
     } catch (error) {
       return res.status(500).json(error.message)
     }
