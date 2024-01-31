@@ -6,7 +6,6 @@ const LoginService = new LoginServices()
 
 class AuthMiddleware{
     static async autentifica(req, res, next){
-        console.log('chamou func')
         const { authorization } = req.headers // é indicado que o token seja enviado dentro de um header
     
             if(!authorization){

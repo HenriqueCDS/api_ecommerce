@@ -17,6 +17,7 @@ class LoginController{
             const {email, senha} = req.body
             // verifica se existe o email
             const usuario = await LoginService.verificaEmail({email})
+            console.log()
             
             if(!usuario){
                 return res.status(400).json({
@@ -35,7 +36,7 @@ class LoginController{
             }
 
           
-            const token = jwt.sign({id:usuario.id }, process.env.JWT_PASS ?? '', {expiresIn: '8h'} ) // esse jwt deve ser mudado, ele é a senha que deixa o user logado
+            const token = jwt.sign({ id:usuario.id, email:email, nome:usuario.primeiroNome }, process.env.JWT_PASS ?? '', {expiresIn: '8h'} ) // esse jwt deve ser mudado, ele é a senha que deixa o user logado
 
             const {senha:_ , ...usuarioLogin} = usuario // tirando a senha do json do usuario, para n retornar no json
             return res.status(200).json({
